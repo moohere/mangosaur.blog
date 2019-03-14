@@ -15,6 +15,7 @@ router.register(r'categorys', views.CategoryViewSet)
 router.register(r'tags', views.TagViewSet)
 
 urlpatterns = [
+    path('', include('frontend.urls')),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
